@@ -11,6 +11,7 @@ A lightweight JavaScript library for parsing DICOM P10 byte streams.  This proje
 
 **[Documentation](https://github.com/chafey/dicomParser/docs/index.md)**
 
+
 ## Port to ECMAScript 6 (version 2.0.0)
 
 dicom-parser 2.0.0 does not bring any new features, but the code is now written in
