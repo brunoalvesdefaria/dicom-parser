@@ -4,7 +4,7 @@
 [![Join the chat at https://gitter.im/OHIF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OHIF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
-[![Coverage Status](https://coveralls.io/repos/OHIF/dicom-parser/badge.svg?branch=develop)](https://coveralls.io/r/OHIF/dicom-parser?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/OHIF/dicom-parser/badge.svg?branch=master)](https://coveralls.io/github/OHIF/dicom-parser?branch=master)
 
 A lightweight JavaScript library for parsing DICOM P10 byte streams.  This project is based on the
 [dicomParser](https://github.com/chafey/dicomParser) library.
