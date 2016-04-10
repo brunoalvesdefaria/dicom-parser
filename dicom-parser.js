@@ -101,9 +101,11 @@
 
   setHookCallback(local__createLocal);
 
+
+
   utils_hooks__hooks.fn                    = dicomParserPrototype;
   utils_hooks__hooks.prototype             = dicomParserPrototype;
-
+  utils_hooks__hooks.parseDA = parseDA;
 
   var _dicom_parser = utils_hooks__hooks;
 
