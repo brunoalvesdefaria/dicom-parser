@@ -6,7 +6,7 @@
 
 import { hooks as dicomParser, setHookCallback } from './lib/utils/hooks';
 
-dicomParser.version = '2.0.0';
+dicomParser.version = '2.0.1';
 
 import {
   createLocal     as local,

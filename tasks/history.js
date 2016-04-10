@@ -56,7 +56,7 @@ function getSizeAtVersion(version, path) {
     req = https.request({
       host: 'raw.github.com',
       port: 443,
-      path: '/chafey/dicomParser/' + version + path
+      path: '/Users/chafey/ssrc/OHIF/dicom-parser/' + version + path
     }, function (res) {
       res.setEncoding('utf8');
       res.on('data', function (chunk) {

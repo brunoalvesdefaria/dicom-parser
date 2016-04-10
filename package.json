@@ -1,6 +1,6 @@
 {
   "name": "dicom-parser",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.1",
   "description": "JavaScript parser for DICOM Part 10 data",
     "homepage": "https://github.com/OHIF/dicom-parser",
   "author": "Chris Hafey <chafey@gmail.com> (https://github.com/chafey)",

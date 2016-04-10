@@ -11,7 +11,7 @@ function getVersion(path, cb) {
     req = https.request({
       host: 'raw.github.com',
       port: 443,
-      path: '/chafey/dicom-parser/' + path
+      path: '/Users/chafey/ssrc/OHIF/dicom-parser/' + path
     }, function (res) {
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
