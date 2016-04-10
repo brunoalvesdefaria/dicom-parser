@@ -1,7 +1,7 @@
 # dicom-parser
 
 
-[![Join the chat at https://gitter.im/OHIF/dicom-parser](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OHIF/dicom-=parser?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/OHIF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OHIF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
 [![Coverage Status](https://coveralls.io/repos/OHIF/dicom-parser/badge.svg?branch=develop)](https://coveralls.io/r/OHIF/dicom-parser?branch=develop)
@@ -42,8 +42,8 @@ dicom-parser.js is freely distributable under the terms of the [MIT license](htt
 [license-url]: LICENSE
 
 [npm-url]: https://npmjs.org/package/dicom-parser
-[npm-version-image]: http://img.shields.io/npm/v/moment.svg?style=flat
-[npm-downloads-image]: http://img.shields.io/npm/dm/moment.svg?style=flat
+[npm-version-image]: http://img.shields.io/npm/v/dicom-parser.svg?style=flat
+[npm-downloads-image]: http://img.shields.io/npm/dm/dicom-parser.svg?style=flat
 
 [travis-url]: http://travis-ci.org/OHIF/dicom-parser
 [travis-image]: http://img.shields.io/travis/OHIF/dicom-parser/develop.svg?style=flat

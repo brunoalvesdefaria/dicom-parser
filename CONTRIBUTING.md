@@ -38,7 +38,7 @@ To contribute, fork the library and install grunt and dependencies. You need
 
 ```bash
 git clone https://github.com/OHIF/dicom-parser.git
-cd moment
+cd dicom-parser
 npm install -g grunt-cli
 npm install
 git checkout develop  # all patches against develop branch, please!
