@@ -9,7 +9,6 @@ test('parseDA', function (assert) {
     month:3,
     day:29
   };
-  console.log(dicomParser);
   assert.deepEqual(dicomParser.parseDA('20140329'), expected, 'parseDA invalid');
 });
 
