@@ -49,14 +49,14 @@ function display() {
   done();
 }
 
-function getSizeAtVersion(version, path) {
+function getSizeAtVersion(version, repo, path) {
   var data = '',
     op = {},
 
     req = https.request({
       host: 'raw.github.com',
       port: 443,
-      path: '/Users/chafey/ssrc/OHIF/dicom-parser/' + version + path
+      path: '/' + repo + '/' + version + path
     }, function (res) {
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
@@ -82,15 +82,15 @@ function getSizeAtVersion(version, path) {
 }
 
 function getRemote() {
-  var oldVersions = '1.0.1 1.1.0 1.1.1 1.1.2 1.2.0 1.3.0 1.4.0'.split(' '),
-    newVersions = '1.5.0 1.5.1 1.6.0 1.6.1 1.7.0 1.7.1'.split(' '),
+  var oldVersions = '1.2.1 1.3.0'.split(' '),
+    newVersions = '2.0.0 2.0.1'.split(' '),
     i;
 
   for (i = 0; i < oldVersions.length; i++) {
-    getSizeAtVersion(oldVersions[i], '/dicom-parser.min.js');
+    getSizeAtVersion(oldVersions[i], 'chafey/dicomParser', '/dist/dicomParser.min.js');
   }
   for (i = 0; i < newVersions.length; i++) {
-    getSizeAtVersion(newVersions[i], '/min/dicom-parser.min.js');
+    getSizeAtVersion(newVersions[i], 'OHIF/dicom-parser', '/min/dicom-parser.min.js');
   }
 }
 

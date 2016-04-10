@@ -9,8 +9,8 @@ module.exports = function (grunt) {
       options: {
         replacements: [
           {
-            pattern:     /\/\/! version : .*/,
-            replacement: '//! version : ' + version
+            pattern:     /\/\/! version: .*/,
+            replacement: '//! version: ' + version
           }, {
             pattern:     /dicomParser\.version = '.*'/,
             replacement: "dicomParser.version = '" + version + "'"

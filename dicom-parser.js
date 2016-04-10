@@ -1,5 +1,5 @@
 //! dicom-parser.js
-//! version: 2.0.0
+//! version: 2.0.2
 //! authors: Chris Hafey, dicomParser contributors
 //! license: MIT
 //! https://github.com/OHIF/dicom-parser
@@ -97,7 +97,7 @@
 
 
 
-  utils_hooks__hooks.version = '2.0.0';
+  utils_hooks__hooks.version = '2.0.2';
 
   setHookCallback(local__createLocal);
 
