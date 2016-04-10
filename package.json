@@ -1,0 +1,84 @@
+{
+  "name": "dicom-parser",
+  "version": "2.0.0-alpha.0",
+  "description": "JavaScript parser for DICOM Part 10 byte streams",
+    "homepage": "https://github.com/OHIF/dicom-parser",
+  "author": "Chris Hafey <chafey@gmail.com> (https://github.com/chafey)",
+  "contributors": [
+  ],
+  "keywords": [
+    "DICOM",
+    "parse",
+    "medical",
+    "imaging"
+  ],
+  "main": "./dicom-parser.js",
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OHIF/dicom-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OHIF/dicom-parser/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "uglify-js": "latest",
+    "es6-promise": "latest",
+    "grunt": "~0.4",
+    "grunt-cli": "latest",
+    "benchmark": "latest",
+    "esperanto": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-env": "latest",
+    "grunt-jscs": "latest",
+    "grunt-karma": "latest",
+    "grunt-nuget": "latest",
+    "grunt-benchmark": "latest",
+    "grunt-string-replace": "latest",
+    "grunt-exec": "latest",
+    "load-grunt-tasks": "latest",
+    "karma": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-firefox-launcher": "latest",
+    "karma-qunit": "latest",
+    "karma-sauce-launcher": "latest",
+    "qunit": "^0.7.5",
+    "qunit-cli": "^0.1.4",
+    "spacejam": "latest",
+    "coveralls": "^2.11.2",
+    "nyc": "^2.1.4"
+  },
+  "ender": "./ender.js",
+  "dojoBuild": "package.js",
+  "jspm": {
+    "files": [
+      "dicom-parser.js",
+      "locale"
+    ],
+    "map": {
+      "dicom-parser": "./dicom-parser"
+    },
+    "buildConfig": {
+      "uglify": true
+    }
+  },
+  "scripts": {
+    "test": "grunt test",
+    "coverage": "nyc npm test && nyc report",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "spm": {
+    "main": "dicom-parser.js",
+    "output": [
+      "locale/*.js"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "dicom-parser",
+  "version": "2.0.0",
+  "main": "dicom-parser.js",
+  "description": "JavaScript parser for DICOM Part 10 byte streams.",
+  "files": [
+    "dicom-parser.js"
+  ],
+  "scripts": [
+    "dicom-parser.js"
+  ]
+}
