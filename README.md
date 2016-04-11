@@ -39,6 +39,23 @@ write to [chafey](https://github.com/chafey).
 
 dicom-parser.js is freely distributable under the terms of the [MIT license](https://github.com/OHIF/dicom-parser/blob/develop/LICENSE).
 
+## TODO
+
+* Get Code coverage to 100%
+* Figure out how to run coveralls locally
+* Add automated tests for the different modularization strategies/consuming environments (e.g. meteor, 
+  Angular 1, Angular 2, ES6, etc)
+* Add  automated tests for various browsers.  There is some config in there for saucelabs but 
+  I didn't try to get it working
+* Get nuget working. There is some config in there for this but I didn't try to get it working
+* Figure out why source comments are not being removed form the minified file.  
+  Setting preserveComments to false instead of 'some' fixes this bug removes the version header.  
+  Note that I get the same weird results when building moment.js so it may be a bug in uglify?
+* Figure out strategy for live examples.  rawgithib is not 100% reliable so it would be nice 
+  to figure out another solution
+* Figure out strategy for documentation.  Just use markdown or go HTML documentation like moment.js does?
+
+
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: LICENSE
 

@@ -114,7 +114,7 @@ module.exports = function (grunt) {
           ascii_only: true // jshint ignore:line
         },
         report: 'min',
-        preserveComments: 'some'
+        preserveComments: false
       }
     },
     jshint: {
@@ -176,7 +176,6 @@ module.exports = function (grunt) {
         command: 'meteor publish'
       }
     }
-
   });
 
   grunt.loadTasks('tasks');

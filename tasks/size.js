@@ -3,15 +3,15 @@ var https = require('https'),
   path = require('path'),
   fs = require('fs');
 
-var stable = '1.7.1',
+var stable = '1.3.0',
   done;
 
 function getVersion(path, cb) {
   var data = '',
     req = https.request({
-      host: 'raw.github.com',
+      host: 'raw.githubusercontent.com',
       port: 443,
-      path: '/Users/chafey/ssrc/OHIF/dicom-parser/' + path
+      path: '/chafey/dicomParser/' + path
     }, function (res) {
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         throw err;
       }
       zlib.gzip(data, function (error, result) {
-        getVersion(stable + '/min/dicom-parser.min.js', function (stableLength, stableGzipLength) {
+        getVersion(stable + '/dist/dicomParser.min.js', function (stableLength, stableGzipLength) {
           printDiffs(stableLength, stableGzipLength, data.length, result.length);
           done();
         });

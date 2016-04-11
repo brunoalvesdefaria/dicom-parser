@@ -15,7 +15,7 @@
     "CONTRIBUTING.md",
     "ender.js",
     "Gruntfile.js",
-    "Moment.js.nuspec",
+    "dicom-parser.js.nuspec",
     "package.js",
     "package.json"
   ]
