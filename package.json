@@ -45,7 +45,8 @@
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "browserify": "browserify -d src/dicom-parser.js -o dist/dicom-parser.js -p licensify",
     "minify": "uglifyjs dist/dicom-parser.js -c \"evaluate=false\" --source-map dist/dicom-parser.min.map --source-map-url dicom-parser.min.map -p relative -o dist/dicom-parser.min.js --comments --screw-ie8 -m",
-    "build": "npm run browserify && npm run minify"
+    "build": "npm run browserify && npm run minify",
+    "watch": "watchify src/dicom-parser.js -o build/dicom-parser.js -v"
   },
   "browserify": {
     "transform": [
