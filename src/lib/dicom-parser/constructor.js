@@ -1,4 +1,3 @@
-
 // DicomParser prototype object
-export function DicomParser(config) {
-}
+export const DicomParser = function () {
+};

@@ -1,5 +1,3 @@
-
-
-export function parseDicom(byteArray, options) {
+export const parseDicom = function () {
   throw new Error('not yet implemented');
-}
+};

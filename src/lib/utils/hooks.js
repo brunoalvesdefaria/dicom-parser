@@ -1,13 +1,9 @@
-export { hooks, setHookCallback };
-
-var hookCallback;
-
-function hooks () {
-  return hookCallback.apply(null, arguments);
-}
+let hookCallback = () => {};
 
 // This is done to register the method called with dicomParser()
-// without creating circular dependencies.
-function setHookCallback (callback) {
+// Without creating circular dependencies.
+export const setHookCallback = function (callback) {
   hookCallback = callback;
-}
+};
+
+export const hooks = (...params) => Reflect.apply(hookCallback, null, params);

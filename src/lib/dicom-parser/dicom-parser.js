@@ -8,4 +8,4 @@ export {
   createLocal,
   dicomParserPrototype,
   parseDA
-  };
+};

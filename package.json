@@ -75,7 +75,8 @@
   },
   "scripts": {
     "test": "mocha --require babel-register",
-    "coverage": "nyc npm test && nyc report",
+    "lint": "eslint src/**.js test/**.js",
+    "coverage": "nyc npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {

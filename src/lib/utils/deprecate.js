@@ -1,40 +1,47 @@
 import extend from './extend';
 import { hooks } from './hooks';
-import isUndefined from './is-undefined';
 
-function warn(msg) {
-  if (hooks.suppressDeprecationWarnings === false &&
-    (typeof console !==  'undefined') && console.warn) {
-    console.warn('Deprecation warning: ' + msg);
+const warn = function (msg) {
+  const noSupress = hooks.suppressDeprecationWarnings === false;
+  const consoleWarn = window.console && window.console.warn;
+
+  if (noSupress && consoleWarn) {
+    consoleWarn('Deprecation warning:', msg);
   }
-}
+};
 
-export function deprecate(msg, fn) {
-  var firstTime = true;
+export const deprecate = function (msg, fn) {
+  let firstTime = true;
 
-  return extend(function () {
-    if (hooks.deprecationHandler != null) {
+  return extend(function (...params) {
+    if (hooks.deprecationHandler !== null) {
       hooks.deprecationHandler(null, msg);
     }
+
     if (firstTime) {
-      warn(msg + '\nArguments: ' + Array.prototype.slice.call(arguments).join(', ') + '\n' + (new Error()).stack);
+      const paramsConcat = params.join(', ');
+      const errorStack = (new Error()).stack;
+
+      warn(`${msg}\nArguments: ${paramsConcat}\n${errorStack}`);
       firstTime = false;
     }
-    return fn.apply(this, arguments);
+
+    return Reflect.apply(fn, this, params);
   }, fn);
-}
+};
 
-var deprecations = {};
+const deprecations = {};
 
-export function deprecateSimple(name, msg) {
-  if (hooks.deprecationHandler != null) {
+export const deprecateSimple = function (name, msg) {
+  if (hooks.deprecationHandler !== null) {
     hooks.deprecationHandler(name, msg);
   }
+
   if (!deprecations[name]) {
     warn(msg);
     deprecations[name] = true;
   }
-}
+};
 
 hooks.suppressDeprecationWarnings = false;
 hooks.deprecationHandler = null;
