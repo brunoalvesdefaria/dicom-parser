@@ -2,10 +2,9 @@
   "name": "dicom-parser",
   "version": "2.0.2",
   "description": "JavaScript parser for DICOM Part 10 data",
-    "homepage": "https://github.com/OHIF/dicom-parser",
+  "homepage": "https://github.com/OHIF/dicom-parser",
   "author": "Chris Hafey <chafey@gmail.com> (https://github.com/chafey)",
-  "contributors": [
-  ],
+  "contributors": [],
   "keywords": [
     "DICOM",
     "parse",
@@ -25,12 +24,16 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "uglify-js": "latest",
-    "es6-promise": "latest",
-    "grunt": "~0.4",
-    "grunt-cli": "latest",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "latest",
     "benchmark": "latest",
+    "chai": "latest",
+    "coveralls": "latest",
+    "es6-promise": "latest",
     "esperanto": "latest",
+    "grunt": "~0.4",
+    "grunt-benchmark": "latest",
+    "grunt-cli": "latest",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-copy": "latest",
@@ -38,23 +41,23 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-env": "latest",
+    "grunt-exec": "latest",
     "grunt-jscs": "latest",
     "grunt-karma": "latest",
     "grunt-nuget": "latest",
-    "grunt-benchmark": "latest",
     "grunt-string-replace": "latest",
-    "grunt-exec": "latest",
-    "load-grunt-tasks": "latest",
     "karma": "latest",
     "karma-chrome-launcher": "latest",
     "karma-firefox-launcher": "latest",
     "karma-qunit": "latest",
     "karma-sauce-launcher": "latest",
+    "load-grunt-tasks": "latest",
+    "mocha": "latest",
+    "nyc": "latest",
     "qunit": "^0.7.5",
     "qunit-cli": "^0.1.4",
     "spacejam": "latest",
-    "coveralls": "^2.11.2",
-    "nyc": "^2.1.4"
+    "uglify-js": "latest"
   },
   "ender": "./ender.js",
   "dojoBuild": "package.js",
@@ -71,9 +74,14 @@
     }
   },
   "scripts": {
-    "test": "grunt test",
+    "test": "mocha --require babel-register",
     "coverage": "nyc npm test && nyc report",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "nyc": {
+    "exclude": [
+      "dicom-parser.js"
+    ]
   },
   "spm": {
     "main": "dicom-parser.js",
