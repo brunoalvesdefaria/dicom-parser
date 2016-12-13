@@ -22,13 +22,13 @@ const isValidDate = function (d, m, y) {
 
 /**
  * Parses a DA formatted string into a Javascript object
- * @module
- * @param {string} date a string in the DA VR format
- * @param {boolean} [validate] - Shall throw exception when the date is invalid?
- * @returns {*} Object with properties year, month and day<br>
- *              Will return undefined if not present or not 8 bytes long
+ * @memberof dicomParser
+ * @param {string} date A string in the DA VR format
+ * @param {boolean} [validate] - Throws exception if the date is invalid?
+ * @returns {object} Object with properties year, month and day will return
+ * undefined if not present or not 8 bytes long
  */
-export const parseDA = function (date, validate) {
+const parseDA = function (date, validate) {
   if (date && date.length === 8) {
     const yyyy = parseInt(date.substring(0, 4), 10);
     const mm = parseInt(date.substring(4, 6), 10);
@@ -51,3 +51,5 @@ export const parseDA = function (date, validate) {
 
   return undefined;
 };
+
+export { parseDA };

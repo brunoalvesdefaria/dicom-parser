@@ -1,6 +1,6 @@
 {
   "source": {
-    "include": "dist/dicom-parser.js"
+    "include": "./src"
   },
   "opts": {
     "template": "node_modules/docdash",

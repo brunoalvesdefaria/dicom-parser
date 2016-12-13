@@ -1,22 +1,22 @@
+import version from './version';
+import * as parsers from './lib/parsers';
+
 /**
- * DICOM Parser module
- * @module
+ * @class
  */
+class dicomParser {
 
-import { hooks as dicomParser, setHookCallback } from './lib/utils/hooks';
+  /**
+   * Current version of the library
+   */
+  static get version () {
+    return version;
+  }
 
-dicomParser.version = '2.0.2';
+}
 
-import {
-  createLocal as local,
-  dicomParserPrototype as fn,
-  parseDA
-} from './lib/dicom-parser/dicom-parser';
-
-setHookCallback(local);
-
-dicomParser.fn = fn;
-dicomParser.prototype = fn;
-dicomParser.parseDA = parseDA;
+// Parsers
+dicomParser.parseDA = parsers.parseDA;
+dicomParser.parseDicom = parsers.parseDicom;
 
 export default dicomParser;

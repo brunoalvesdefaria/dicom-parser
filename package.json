@@ -35,20 +35,23 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-firefox-launcher": "^1.0.0",
     "karma-sauce-launcher": "^1.1.0",
+    "licensify": "^3.1.2",
     "mocha": "^3.2.0",
     "nyc": "^10.0.0",
+    "shx": "^0.2.1",
     "uglify-js": "^2.7.5",
     "watchify": "^3.7.0"
   },
   "scripts": {
     "lint": "eslint src/**.js test/**.js",
-    "test": "npm run lint && mocha --require babel-register",
+    "test": "mocha --require babel-register",
     "coverage": "nyc npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "browserify": "browserify -d src/dicom-parser.js -o dist/dicom-parser.js -p licensify",
     "minify": "uglifyjs dist/dicom-parser.js -c \"evaluate=false\" --source-map dist/dicom-parser.min.map --source-map-url dicom-parser.min.map -p relative -o dist/dicom-parser.min.js --comments --screw-ie8 -m",
-    "doc": "jsdoc src/dicom-parser.js -c .jsdocrc",
-    "build": "npm run browserify && npm run minify && npm run doc",
+    "doc": "shx rm -rf docs && jsdoc -c .jsdocrc",
+    "version": "node -p -e \"'export default \\'' + require('./package.json').version + '\\';'\" > src/version.js",
+    "build": "npm run version && npm run lint && npm run browserify && npm run minify && npm run doc",
     "watch": "watchify src/dicom-parser.js -o build/dicom-parser.js -v"
   },
   "browserify": {

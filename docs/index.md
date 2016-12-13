@@ -1,3 +1,0 @@
-dicom-parser Documentation
-==========================
-
