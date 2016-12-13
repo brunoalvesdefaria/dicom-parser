@@ -1,8 +1,7 @@
-// ! dicom-parser.js
-// ! version: 2.0.2
-// ! authors: Chris Hafey, dicomParser contributors
-// ! license: MIT
-// ! https://github.com/OHIF/dicom-parser
+/**
+ * DICOM Parser module
+ * @module
+ */
 
 import { hooks as dicomParser, setHookCallback } from './lib/utils/hooks';
 

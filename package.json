@@ -29,6 +29,8 @@
     "babelify": "^7.3.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.15",
+    "docdash": "^0.4.0",
+    "jsdoc": "^3.4.3",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-firefox-launcher": "^1.0.0",
@@ -45,7 +47,8 @@
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "browserify": "browserify -d src/dicom-parser.js -o dist/dicom-parser.js -p licensify",
     "minify": "uglifyjs dist/dicom-parser.js -c \"evaluate=false\" --source-map dist/dicom-parser.min.map --source-map-url dicom-parser.min.map -p relative -o dist/dicom-parser.min.js --comments --screw-ie8 -m",
-    "build": "npm run browserify && npm run minify",
+    "doc": "jsdoc src/dicom-parser.js -c .jsdocrc",
+    "build": "npm run browserify && npm run minify && npm run doc",
     "watch": "watchify src/dicom-parser.js -o build/dicom-parser.js -v"
   },
   "browserify": {

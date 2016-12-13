@@ -22,6 +22,7 @@ const isValidDate = function (d, m, y) {
 
 /**
  * Parses a DA formatted string into a Javascript object
+ * @module
  * @param {string} date a string in the DA VR format
  * @param {boolean} [validate] - Shall throw exception when the date is invalid?
  * @returns {*} Object with properties year, month and day<br>

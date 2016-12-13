@@ -1,0 +1,12 @@
+{
+  "source": {
+    "include": "dist/dicom-parser.js"
+  },
+  "opts": {
+    "template": "node_modules/docdash",
+    "encoding": "utf8",
+    "destination": "docs/",
+    "recurse": true,
+    "verbose": true
+  }
+}
