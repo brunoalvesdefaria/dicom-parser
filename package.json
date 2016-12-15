@@ -57,13 +57,13 @@
     "test:sauce": "karma start config/karma-sauce.js",
     "coverage": "shx rm -rf coverage && karma start config/karma-coverage.js && opn coverage/html/index.html",
     "coveralls": "shx rm -rf coverage && karma start config/karma-coveralls.js",
-    "browserify": "browserify -d src/dicom-parser.js -o dist/dicom-parser.js -p licensify",
+    "browserify": "browserify -d src/dicom-parser.js --standalone dicomParser -o dist/dicom-parser.js -p licensify",
     "minify": "uglifyjs dist/dicom-parser.js -c \"evaluate=false\" --source-map dist/dicom-parser.min.map --source-map-url dicom-parser.min.map -p relative -o dist/dicom-parser.min.js --comments --screw-ie8 -m",
     "doc": "npm run doc:generate && opn docs/index.html",
     "doc:generate": "shx rm -rf docs && jsdoc -c .jsdocrc",
     "version": "node -p -e \"'export default \\'' + require('./package.json').version + '\\';'\" > src/version.js",
     "build": "npm run version && npm run lint && npm run browserify && npm run minify && npm run doc:generate",
-    "watch": "watchify src/dicom-parser.js -o build/dicom-parser.js -v"
+    "watch": "watchify src/dicom-parser.js --standalone dicomParser -o build/dicom-parser.js -v"
   },
   "browserify": {
     "transform": [
